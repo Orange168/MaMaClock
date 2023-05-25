@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "com.sc.sensorexample.app-merged_res-4:/menu_main.xml.flat",
+        "source": "com.sc.sensorexample.app-main-6:/menu/main.xml"
+    },
+    {
+        "merged": "com.sc.sensorexample.app-merged_res-4:/layout_activity_main.xml.flat",
+        "source": "com.sc.sensorexample.app-main-6:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.sc.sensorexample.app-merged_res-4:/drawable-hdpi_ic_launcher.png.flat",
+        "source": "com.sc.sensorexample.app-main-6:/drawable-hdpi/ic_launcher.png"
+    }
+]

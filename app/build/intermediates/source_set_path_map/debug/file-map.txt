@@ -1,0 +1,7 @@
+com.sc.sensorexample.app-pngs-0 /Users/apple/AndroidStudioProjects/MaMaClock/app/build/generated/res/pngs/debug
+com.sc.sensorexample.app-resValues-1 /Users/apple/AndroidStudioProjects/MaMaClock/app/build/generated/res/resValues/debug
+com.sc.sensorexample.app-packageDebugResources-2 /Users/apple/AndroidStudioProjects/MaMaClock/app/build/intermediates/incremental/debug/packageDebugResources/merged.dir
+com.sc.sensorexample.app-packageDebugResources-3 /Users/apple/AndroidStudioProjects/MaMaClock/app/build/intermediates/incremental/debug/packageDebugResources/stripped.dir
+com.sc.sensorexample.app-merged_res-4 /Users/apple/AndroidStudioProjects/MaMaClock/app/build/intermediates/merged_res/debug
+com.sc.sensorexample.app-debug-5 /Users/apple/AndroidStudioProjects/MaMaClock/app/src/debug/res
+com.sc.sensorexample.app-main-6 /Users/apple/AndroidStudioProjects/MaMaClock/app/src/main/res
