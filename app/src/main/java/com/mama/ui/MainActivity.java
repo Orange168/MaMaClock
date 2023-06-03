@@ -1,4 +1,4 @@
-package com.mama.sensorDemo;
+package com.mama.ui;
 
 import android.app.Activity;
 import android.app.AppOpsManager;
@@ -15,10 +15,10 @@ import android.view.View;
 import androidx.core.content.ContextCompat;
 
 import com.mama.R;
-import com.mama.screen.ScreenTool;
+import com.mama.utils.ScreenTool;
 
-import com.mama.service.MyForegroundService;
-import com.mama.service.SensorService;
+import com.mama.components.MyForegroundService;
+import com.mama.components.SensorService;
 
 
 public class MainActivity extends Activity {

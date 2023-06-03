@@ -1,4 +1,4 @@
-package com.mama.sensor;
+package com.mama.utils;
 
 import android.content.Context;
 import android.hardware.Sensor;

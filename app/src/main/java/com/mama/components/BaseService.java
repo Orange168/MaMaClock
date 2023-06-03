@@ -1,4 +1,4 @@
-package com.mama.service;
+package com.mama.components;
 
 import android.app.Service;
 import android.content.Context;

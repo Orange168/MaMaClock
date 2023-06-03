@@ -1,4 +1,4 @@
-package com.mama.screen;
+package com.mama.utils;
 
 import android.annotation.SuppressLint;
 import android.app.KeyguardManager;

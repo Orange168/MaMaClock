@@ -1,11 +1,11 @@
-package com.mama.service;
+package com.mama.components;
 
 import android.content.Context;
 import android.widget.Toast;
 
-import com.mama.screen.ScreenTool;
-import com.mama.sensor.SensorTool;
-import com.mama.sensor.SensorTool.ShakeListener;
+import com.mama.utils.ScreenTool;
+import com.mama.utils.SensorTool;
+import com.mama.utils.SensorTool.ShakeListener;
 
 /* 在AndroidManifest.xml添加 <service/>
 <application ...>

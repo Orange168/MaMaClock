@@ -1,6 +1,5 @@
-package com.mama.service;
+package com.mama.components;
 
-import android.app.AppOpsManager;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -8,19 +7,16 @@ import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.ApplicationInfo;
-import android.net.Uri;
 import android.os.Build;
 import android.os.IBinder;
-import android.provider.Settings;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
 
 import com.mama.R;
-import com.mama.screen.ScreenTool;
-import com.mama.sensor.SensorTool;
+import com.mama.utils.AlarmUtils;
+import com.mama.utils.SensorTool;
+import com.mama.utils.MediaPlayerHelper;
 
 public class MyForegroundService extends Service {
 
@@ -53,14 +49,18 @@ public class MyForegroundService extends Service {
         SensorTool.SetShakeListener(this, new SensorTool.ShakeListener() {
             @Override
             public void onShake() {
-                Toast.makeText(getApplicationContext(), "通过摇一摇，点亮屏幕", Toast.LENGTH_SHORT).show();
+                if (!hasRecentAlarm()) {
+                    setAlarmIfNeeded();
+                }else {
+                   MediaPlayerHelper.getInstance().playRawAudio(getApplicationContext(), R.raw.exit_alarm);
+                }
             }
         });
     }
 
     private boolean hasRecentAlarm() {
         // 从SharedPreferences中获取上次设置闹钟的时间戳
-        SharedPreferences sharedPreferences = getSharedPreferences("AlarmPrefs", Context.MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getSharedPreferences("AlarmPrefs2", Context.MODE_PRIVATE);
         long lastAlarmTime = sharedPreferences.getLong("LastAlarmTime", 0);
 
         // 获取当前时间
@@ -77,9 +77,11 @@ public class MyForegroundService extends Service {
 
             // TODO: 在这里设置闹钟，例如使用AlarmManager或其他闹钟相关的机制
             // 这里只是一个示例，具体的设置闹钟逻辑需要根据你的应用和需求进行实现
+            AlarmUtils.setAlarm(getApplicationContext());
+            MediaPlayerHelper.getInstance().playRawAudio(getApplicationContext(), R.raw.voice_2_hour);
 
             // 更新上次设置闹钟的时间戳
-            SharedPreferences sharedPreferences = getSharedPreferences("AlarmPrefs", Context.MODE_PRIVATE);
+            SharedPreferences sharedPreferences = getSharedPreferences("AlarmPrefs2", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putLong("LastAlarmTime", twoHoursLater);
             editor.apply();
